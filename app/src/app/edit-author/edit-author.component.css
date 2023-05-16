@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: var(--gray);
+}
+
+.contact-form p,.contact-form label {
+  font-size: .9rem;
+  color: var(--gray);
+}
+
+.contact-form input[type="text"], .contact-form textarea{
+  margin-bottom: 1rem;
+}
+
+form {
+  width: 80%;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 800px) {
+  .kontakt iframe {
+    width: 60%;
+    height: 450px;
+  }
+  form {
+    width: 50%;
+  }
+}
+

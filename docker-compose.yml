@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: vpa_be
+    container_name: vpa_be
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/vaii_sem
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=pass
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  db:
+    build: ./postgres_db
+    image: vpa_db
+    container_name: vpa_db
+    environment:
+      - POSTGRES_DB=vaii_sem
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pass
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    ports:
+      - 5432:5432
+
+  frontend:
+    build: ./app
+    image: vpa_fe
+    container_name: vpa_fe
+    ports:
+      - "80:80"
+volumes:
+  db_data:

@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+:root {
+  --natural: #eae7dc;
+  --brown: #d8c3a5;
+  --gray: #8e8d8a;
+  --pink: #e98074;
+  --red: #e85a4f;
+  --golden: #ffd700;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-submit {
+  color: var(--natural);
+  padding: .375rem .5rem;
+  font-size: 1.2rem;
+  background-color: var(--red);
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  border: none;
+}
+
+.btn-submit:hover {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  cursor: pointer;
+  color: var(--natural);
+  background-color: var(--pink);
+}
